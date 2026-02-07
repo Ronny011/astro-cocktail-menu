@@ -1,0 +1,26 @@
+---
+type Props = {
+  title: string;
+  buttonLabelEn: string;
+  buttonLabelHe: string;
+  buttonLabelRu: string;
+  buttonUrlEn: string;
+  buttonUrlHe: string;
+  buttonUrlRu: string;
+}
+
+const { title, buttonLabelEn, buttonLabelHe, buttonLabelRu, buttonUrlEn, buttonUrlHe, buttonUrlRu } = Astro.props;
+---
+<html>
+    <head>
+        <link rel="icon" href="/astro-cocktail-menu/favicon.ico" />
+        <meta charset="utf-8" />
+        <title>{title}</title>
+    </head>
+    <body>
+        <h1>{title}</h1>
+        <a href={buttonUrlEn}>{buttonLabelEn}</a>
+        <a href={buttonUrlHe}>{buttonLabelHe}</a>
+        <a href={buttonUrlRu}>{buttonLabelRu}</a>
+    </body>
+</html>

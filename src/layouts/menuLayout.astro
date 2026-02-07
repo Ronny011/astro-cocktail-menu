@@ -1,0 +1,23 @@
+---
+type Cocktail = {
+name: string;
+ingredients: string;
+tags: string[];
+};
+
+type Props = {
+  cocktails: Cocktail[];
+};
+
+// const { cocktails } = Astro.props;
+const frontmatter = Astro.props;
+---
+
+{frontmatter.cocktails.map((cocktail) => (
+
+  <div>
+    <h2>{cocktail.name}</h2>
+    <p>{cocktail.ingredients}</p>
+    <p>{cocktail.tags}</p>
+  </div>
+))}
