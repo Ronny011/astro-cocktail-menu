@@ -2,10 +2,17 @@
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import LandingPage from '../layouts/landingPage.astro';
 
+export type Locales = 'en' | 'he' | 'ru';
 
-const enURL = getRelativeLocaleUrl("en");
-const heURL = getRelativeLocaleUrl("he");
-const ruURL = getRelativeLocaleUrl("ru");
+export type LocaleProps = Record<Locales, string>
+
+const buttonLabels:LocaleProps = {
+    en: "English",
+    he: "עברית",
+    ru: "Русский"
+}
+
+const buttonUrls:LocaleProps= {en:getRelativeLocaleUrl("en"), he:getRelativeLocaleUrl("he"), ru:getRelativeLocaleUrl("ru")}
 ---
 
-<LandingPage title="Cocktail Menu" buttonLabelEn="English" buttonLabelHe="עברית" buttonLabelRu="Русский" buttonUrlEn={enURL} buttonUrlHe={heURL} buttonUrlRu={ruURL} />
+<LandingPage title="Choose language" buttonUrls={buttonUrls} buttonLabels={buttonLabels} />

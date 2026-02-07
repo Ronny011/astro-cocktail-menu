@@ -1,23 +1,19 @@
 ---
-type Cocktail = {
-name: string;
-ingredients: string;
-tags: string[];
-};
+import "../styles/global.css";
+import "../styles/menu.css";
 
-type Props = {
-  cocktails: Cocktail[];
-};
-
-// const { cocktails } = Astro.props;
-const frontmatter = Astro.props;
+const { frontmatter } = Astro.props;
+const direction = frontmatter?.direction || 'ltr';
 ---
 
-{frontmatter.cocktails.map((cocktail) => (
-
-  <div>
-    <h2>{cocktail.name}</h2>
-    <p>{cocktail.ingredients}</p>
-    <p>{cocktail.tags}</p>
-  </div>
-))}
+<html dir={direction}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/astro-cocktail-menu/favicon.ico" />
+    <title>{frontmatter.title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

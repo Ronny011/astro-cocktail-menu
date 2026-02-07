@@ -1,1 +1,104 @@
 @import "tailwindcss";
+
+/* Hide scrollbar on theme nav */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Common base styles */
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 15px;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+h1 {
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+/* ============================================
+   THEME 1: Classic Dark
+   Dark bg, amber accents, speakeasy vibe
+   ============================================ */
+[data-theme="classic-dark"] body {
+  background-color: #09090b;
+  color: #f4f4f5;
+}
+
+[data-theme="classic-dark"] h1 {
+  color: #fbbf24;
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+/* ============================================
+   THEME 2: Tropical
+   Bright greens & yellows, beach cocktail bar
+   ============================================ */
+[data-theme="tropical"] body {
+  background: linear-gradient(to bottom, #ecfdf5, #fffbeb);
+  color: #022c22;
+}
+
+[data-theme="tropical"] h1 {
+  color: #065f46;
+  font-size: 1.875rem;
+  font-weight: 800;
+}
+
+/* ============================================
+   THEME 3: Elegant
+   Minimal, light, serif-inspired, rose accents
+   ============================================ */
+[data-theme="elegant"] body {
+  background-color: #fafaf9;
+  color: #1c1917;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+[data-theme="elegant"] h1 {
+  color: #1c1917;
+  font-size: 1.875rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ============================================
+   THEME 4: Neon
+   Cyberpunk, fuchsia/cyan glow, dark bg
+   ============================================ */
+[data-theme="neon"] body {
+  background-color: #030712;
+  color: #fae8ff;
+}
+
+[data-theme="neon"] h1 {
+  color: #e879f9;
+  font-size: 1.875rem;
+  font-weight: 900;
+  text-shadow: 0 0 10px rgba(217, 70, 239, 0.5);
+}
+
+/* ============================================
+   THEME 5: Rustic
+   Warm ambers & oranges, craft cocktail bar
+   ============================================ */
+[data-theme="rustic"] body {
+  background-color: #fffbeb;
+  color: #451a03;
+}
+
+[data-theme="rustic"] h1 {
+  color: #78350f;
+  font-size: 1.875rem;
+  font-weight: 700;
+}

@@ -1,8 +1,13 @@
 ---
+layout: ../../layouts/Menulayout.astro
 title: "Choose your cocktail 🍸"
 ---
 
-# Choose your cocktail 🍸
+import { ThemeSwitcher } from "../../components/ThemeSwitcher";
+
+<ThemeSwitcher client:load />
+
+# {frontmatter.title}
 
 ---
 
@@ -10,7 +15,7 @@ title: "Choose your cocktail 🍸"
 
 _Aperol and Prosecco_
 
-`refreshing` `bitter` `classic`
+`refreshing`, `bitter`, `classic`
 
 ---
 
@@ -18,7 +23,7 @@ _Aperol and Prosecco_
 
 _Bourbon, Sour and Red wine_
 
-`sour` `strong` `contains wine`
+`sour`, `strong`, `contains wine`
 
 ---
 
@@ -26,7 +31,7 @@ _Bourbon, Sour and Red wine_
 
 _Gin, Lime and Ginger Beer_
 
-`refreshing` `spicy`
+`refreshing`, `spicy`
 
 ---
 
@@ -34,7 +39,7 @@ _Gin, Lime and Ginger Beer_
 
 _Cherry Liqueur, Gin and Lime Sour_
 
-`refreshing` `classic` `sour` `fruity`
+`refreshing`, `classic`, `sour`, `fruity`
 
 ---
 
@@ -42,7 +47,7 @@ _Cherry Liqueur, Gin and Lime Sour_
 
 _See title_
 
-`refreshing` `classic`
+`refreshing`, `classic`
 
 ---
 
@@ -50,7 +55,7 @@ _See title_
 
 _Rum, Lime and Almond Syrup_
 
-`sweet` `tropical` `strong`
+`sweet`, `tropical`, `strong`
 
 ---
 
@@ -58,7 +63,7 @@ _Rum, Lime and Almond Syrup_
 
 _Campari, Gin and Red Vermouth_
 
-`bitter` `classic`
+`bitter`, `classic`
 
 ---
 
@@ -66,7 +71,7 @@ _Campari, Gin and Red Vermouth_
 
 _Midori, Chartreuse and Sour_
 
-`sour` `fruity`
+`sour`, `fruity`
 
 ---
 
@@ -74,7 +79,7 @@ _Midori, Chartreuse and Sour_
 
 _Tequila, Lime and Grapefruit Soda_
 
-`refreshing` `fruity`
+`refreshing`, `fruity`
 
 ---
 
@@ -82,7 +87,7 @@ _Tequila, Lime and Grapefruit Soda_
 
 _Gin, Honey, Lemon and Cointreau_
 
-`sweet` `classic` `strong`
+`sweet`, `classic`, `strong`
 
 ---
 
@@ -90,7 +95,7 @@ _Gin, Honey, Lemon and Cointreau_
 
 _Red Wine, Gin and Sour_
 
-`sour` `contains wine`
+`sour`, `contains wine`
 
 ---
 
@@ -106,4 +111,4 @@ _Reposado Tequila, Cynar, Lemon Juice and Maple Syrup_
 
 _Arak Louiza, Orgeat and sour_
 
-`sour` `refreshing` `anise`
+`sour`, `refreshing`, `anise`

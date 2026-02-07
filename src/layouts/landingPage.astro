@@ -1,26 +1,33 @@
 ---
+import '../styles/global.css';
+import '../styles/landing.css';
+import { ThemeSwitcher } from '../components/ThemeSwitcher';
+import type { Locales, LocaleProps } from '../pages/index.astro';
+
 type Props = {
   title: string;
-  buttonLabelEn: string;
-  buttonLabelHe: string;
-  buttonLabelRu: string;
-  buttonUrlEn: string;
-  buttonUrlHe: string;
-  buttonUrlRu: string;
+  buttonLabels: LocaleProps;
+  buttonUrls: LocaleProps;
 }
 
-const { title, buttonLabelEn, buttonLabelHe, buttonLabelRu, buttonUrlEn, buttonUrlHe, buttonUrlRu } = Astro.props;
+const { title, buttonLabels, buttonUrls } = Astro.props;
 ---
 <html>
     <head>
         <link rel="icon" href="/astro-cocktail-menu/favicon.ico" />
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{title}</title>
     </head>
     <body>
-        <h1>{title}</h1>
-        <a href={buttonUrlEn}>{buttonLabelEn}</a>
-        <a href={buttonUrlHe}>{buttonLabelHe}</a>
-        <a href={buttonUrlRu}>{buttonLabelRu}</a>
+        <ThemeSwitcher client:load />
+        <div class="landing-content">
+            <h1>{title}</h1>
+            <div class="landing-links">
+                {Object.entries(buttonLabels).map(([key, value]) => (
+                    <a href={buttonUrls[key as Locales]} class="landing-link">{value}</a>
+                ))}
+            </div>
+        </div>
     </body>
 </html>

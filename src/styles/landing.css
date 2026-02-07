@@ -1,0 +1,94 @@
+/* ============================================
+   Landing page layout
+   ============================================ */
+.landing-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 3rem);
+  padding: 2rem 1rem;
+}
+
+.landing-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 16rem;
+}
+
+.landing-link {
+  display: block;
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+
+.landing-link:active {
+  transform: scale(0.97);
+}
+
+/* Landing: Classic Dark */
+[data-theme="classic-dark"] .landing-link {
+  background-color: #27272a;
+  color: #fbbf24;
+  border: 1px solid #3f3f46;
+}
+[data-theme="classic-dark"] .landing-link:hover {
+  background-color: #3f3f46;
+  box-shadow: 0 0 12px rgba(251, 191, 36, 0.15);
+}
+
+/* Landing: Tropical */
+[data-theme="tropical"] .landing-link {
+  background-color: #059669;
+  color: #ffffff;
+}
+[data-theme="tropical"] .landing-link:hover {
+  background-color: #047857;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+
+/* Landing: Elegant */
+[data-theme="elegant"] .landing-link {
+  background-color: #ffffff;
+  color: #1c1917;
+  border: 1px solid #d6d3d1;
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+[data-theme="elegant"] .landing-link:hover {
+  border-color: #fb7185;
+  color: #e11d48;
+  box-shadow: 0 2px 8px rgba(225, 29, 72, 0.1);
+}
+
+/* Landing: Neon */
+[data-theme="neon"] .landing-link {
+  background-color: rgba(217, 70, 239, 0.1);
+  color: #e879f9;
+  border: 1px solid rgba(217, 70, 239, 0.3);
+}
+[data-theme="neon"] .landing-link:hover {
+  background-color: rgba(217, 70, 239, 0.2);
+  box-shadow: 0 0 16px rgba(217, 70, 239, 0.3);
+}
+
+/* Landing: Rustic */
+[data-theme="rustic"] .landing-link {
+  background-color: #92400e;
+  color: #fffbeb;
+}
+[data-theme="rustic"] .landing-link:hover {
+  background-color: #78350f;
+  box-shadow: 0 4px 12px rgba(146, 64, 14, 0.3);
+}

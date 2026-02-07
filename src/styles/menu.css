@@ -1,0 +1,171 @@
+/* ============================================
+   Menu page layout
+   ============================================ */
+body > main,
+body > article {
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+hr {
+  margin: 1rem 0;
+}
+
+code {
+  font-family: inherit;
+}
+
+/* ============================================
+   Menu theme: Classic Dark
+   ============================================ */
+[data-theme="classic-dark"] h2 {
+  color: #f4f4f5;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+[data-theme="classic-dark"] em {
+  color: #a1a1aa;
+  font-size: 0.875rem;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+[data-theme="classic-dark"] code {
+  background-color: rgba(251, 191, 36, 0.1);
+  color: #fcd34d;
+  font-size: 0.75rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+}
+
+[data-theme="classic-dark"] hr {
+  border-color: #27272a;
+}
+
+/* ============================================
+   Menu theme: Tropical
+   ============================================ */
+[data-theme="tropical"] h2 {
+  color: #047857;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+[data-theme="tropical"] em {
+  color: #059669;
+  font-size: 0.875rem;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+[data-theme="tropical"] code {
+  background-color: #fef08a;
+  color: #065f46;
+  font-size: 0.75rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+[data-theme="tropical"] hr {
+  border-color: #a7f3d0;
+}
+
+/* ============================================
+   Menu theme: Elegant
+   ============================================ */
+[data-theme="elegant"] h2 {
+  color: #1c1917;
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+[data-theme="elegant"] em {
+  color: #78716c;
+  font-size: 0.875rem;
+  display: block;
+  margin-top: 0.25rem;
+  font-weight: 300;
+}
+
+[data-theme="elegant"] code {
+  background-color: #fff1f2;
+  color: #e11d48;
+  font-size: 0.75rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.125rem;
+  border: 1px solid #fecdd3;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+[data-theme="elegant"] hr {
+  border-color: #e7e5e4;
+}
+
+/* ============================================
+   Menu theme: Neon
+   ============================================ */
+[data-theme="neon"] h2 {
+  color: #67e8f9;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  text-shadow: 0 0 6px rgba(103, 232, 249, 0.4);
+}
+
+[data-theme="neon"] em {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+[data-theme="neon"] code {
+  background-color: rgba(217, 70, 239, 0.15);
+  color: #f0abfc;
+  font-size: 0.75rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(217, 70, 239, 0.3);
+}
+
+[data-theme="neon"] hr {
+  border-color: rgba(217, 70, 239, 0.15);
+}
+
+/* ============================================
+   Menu theme: Rustic
+   ============================================ */
+[data-theme="rustic"] h2 {
+  color: #92400e;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+[data-theme="rustic"] em {
+  color: #b45309;
+  font-size: 0.875rem;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+[data-theme="rustic"] code {
+  background-color: #ffedd5;
+  color: #9a3412;
+  font-size: 0.75rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+[data-theme="rustic"] hr {
+  border-color: #fde68a;
+}
