@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import '../styles/landing.css';
-import { ThemeSwitcher } from '../components/ThemeSwitcher';
+import { ClientRouter } from 'astro:transitions';
 import type { Locales, LocaleProps } from '../pages/index.astro';
 
 type Props = {
@@ -12,15 +12,15 @@ type Props = {
 
 const { title, buttonLabels, buttonUrls } = Astro.props;
 ---
-<html>
+<html data-theme="neon">
     <head>
         <link rel="icon" href="/astro-cocktail-menu/favicon.ico" />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{title}</title>
+        <ClientRouter />
     </head>
     <body>
-        <ThemeSwitcher client:load />
         <div class="landing-content">
             <h1>{title}</h1>
             <div class="landing-links">

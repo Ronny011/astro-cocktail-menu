@@ -3,15 +3,27 @@ layout: ../../layouts/Menulayout.astro
 title: "Choose your cocktail 🍸"
 ---
 
-import { ThemeSwitcher } from "../../components/ThemeSwitcher";
-
-<ThemeSwitcher client:load />
+import aperolSpritz from "../../assets/images/aperol spritz.webp";
+import nySour from "../../assets/images/ny sour.webp";
+import mule from "../../assets/images/mule.webp";
+import copenhagen from "../../assets/images/copenhagen.webp";
+import ginTonic from "../../assets/images/gin tonic.webp";
+import maiTai from "../../assets/images/mai tai.webp";
+import negroni from "../../assets/images/negroni.webp";
+import midoriShower from "../../assets/images/midori shower.webp";
+import paloma from "../../assets/images/paloma.webp";
+import beesKnees from "../../assets/images/bees knees.webp";
+import redWhiteAndNight from "../../assets/images/red white and night.webp";
+import debbieDont from "../../assets/images/debbie dont.webp";
+import ouzetta from "../../assets/images/ouzetta.webp";
 
 # {frontmatter.title}
 
 ---
 
 ## Aperol Spritz
+
+<img src={aperolSpritz.src} alt="Aperol Spritz" class="cocktail-image" />
 
 _Aperol and Prosecco_
 
@@ -21,6 +33,8 @@ _Aperol and Prosecco_
 
 ## New York Sour
 
+<img src={nySour.src} alt="New York Sour" class="cocktail-image" />
+
 _Bourbon, Sour and Red wine_
 
 `sour`, `strong`, `contains wine`
@@ -28,6 +42,8 @@ _Bourbon, Sour and Red wine_
 ---
 
 ## London Mule
+
+<img src={mule.src} alt="London Mule" class="cocktail-image" />
 
 _Gin, Lime and Ginger Beer_
 
@@ -37,6 +53,8 @@ _Gin, Lime and Ginger Beer_
 
 ## Copenhagen
 
+<img src={copenhagen.src} alt="Copenhagen" class="cocktail-image" />
+
 _Cherry Liqueur, Gin and Lime Sour_
 
 `refreshing`, `classic`, `sour`, `fruity`
@@ -44,6 +62,8 @@ _Cherry Liqueur, Gin and Lime Sour_
 ---
 
 ## Gin & Tonic
+
+<img src={ginTonic.src} alt="Gin & Tonic" class="cocktail-image" />
 
 _See title_
 
@@ -53,6 +73,8 @@ _See title_
 
 ## Mai Tai
 
+<img src={maiTai.src} alt="Mai Tai" class="cocktail-image" />
+
 _Rum, Lime and Almond Syrup_
 
 `sweet`, `tropical`, `strong`
@@ -60,6 +82,8 @@ _Rum, Lime and Almond Syrup_
 ---
 
 ## Negroni
+
+<img src={negroni.src} alt="Negroni" class="cocktail-image" />
 
 _Campari, Gin and Red Vermouth_
 
@@ -69,6 +93,8 @@ _Campari, Gin and Red Vermouth_
 
 ## Midori Shower
 
+<img src={midoriShower.src} alt="Midori Shower" class="cocktail-image" />
+
 _Midori, Chartreuse and Sour_
 
 `sour`, `fruity`
@@ -76,6 +102,8 @@ _Midori, Chartreuse and Sour_
 ---
 
 ## Paloma
+
+<img src={paloma.src} alt="Paloma" class="cocktail-image" />
 
 _Tequila, Lime and Grapefruit Soda_
 
@@ -85,6 +113,8 @@ _Tequila, Lime and Grapefruit Soda_
 
 ## Bee's Knees
 
+<img src={beesKnees.src} alt="Bee's Knees" class="cocktail-image" />
+
 _Gin, Honey, Lemon and Cointreau_
 
 `sweet`, `classic`, `strong`
@@ -92,6 +122,12 @@ _Gin, Honey, Lemon and Cointreau_
 ---
 
 ## Red, White & Night
+
+<img
+  src={redWhiteAndNight.src}
+  alt="Red, White & Night"
+  class="cocktail-image"
+/>
 
 _Red Wine, Gin and Sour_
 
@@ -101,6 +137,8 @@ _Red Wine, Gin and Sour_
 
 ## Debbie, Don't
 
+<img src={debbieDont.src} alt="Debbie, Don't" class="cocktail-image" />
+
 _Reposado Tequila, Cynar, Lemon Juice and Maple Syrup_
 
 `bitter`
@@ -108,6 +146,8 @@ _Reposado Tequila, Cynar, Lemon Juice and Maple Syrup_
 ---
 
 ## Ouzetta
+
+<img src={ouzetta.src} alt="Ouzetta" class="cocktail-image" />
 
 _Arak Louiza, Orgeat and sour_
 

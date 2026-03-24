@@ -1,19 +1,40 @@
 ---
 import "../styles/global.css";
 import "../styles/menu.css";
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { ClientRouter } from 'astro:transitions';
 
 const { frontmatter } = Astro.props;
 const direction = frontmatter?.direction || 'ltr';
+
+const languages = [
+  { code: 'en', label: 'EN' },
+  { code: 'he', label: 'עב' },
+  { code: 'ru', label: 'RU' },
+];
+
+const currentLocale = Astro.currentLocale ?? 'en';
 ---
 
-<html dir={direction}>
+<html dir={direction} data-theme="neon">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/astro-cocktail-menu/favicon.ico" />
     <title>{frontmatter.title}</title>
+    <ClientRouter />
   </head>
   <body>
+    <nav class="language-switcher">
+      {languages.map((language) => (
+        <a
+          href={getRelativeLocaleUrl(language.code)}
+          class:list={['language-link', { active: language.code === currentLocale }]}
+        >
+          {language.label}
+        </a>
+      ))}
+    </nav>
     <slot />
   </body>
 </html>
