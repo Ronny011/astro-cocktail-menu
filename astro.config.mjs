@@ -1,9 +1,7 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 
 import mdx from "@astrojs/mdx";
-
-import tailwindcss from "@tailwindcss/vite";
 
 import react from "@astrojs/react";
 
@@ -12,6 +10,15 @@ export default defineConfig({
   site: "https://ronny011.github.io",
   base: "/astro-cocktail-menu",
   integrations: [mdx(), react()],
+
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: "Bona Nova SC",
+      cssVariable: "--font-bona-nova",
+      styles: ["normal", "italic"],
+    },
+  ],
 
   i18n: {
     defaultLocale: "en",
@@ -22,8 +29,5 @@ export default defineConfig({
     },
   },
 
-  vite: {
-    plugins: [tailwindcss()],
-  },
   output: "static",
 });

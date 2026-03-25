@@ -1,40 +1,53 @@
 ---
 import "../styles/global.css";
 import "../styles/menu.css";
-import { getRelativeLocaleUrl } from 'astro:i18n';
+import "../styles/rose-velvet-theme.css";
 import { ClientRouter } from 'astro:transitions';
+import { Font } from 'astro:assets';
+import SiteHeader from '../components/SiteHeader.astro';
 
 const { frontmatter } = Astro.props;
 const direction = frontmatter?.direction || 'ltr';
+const locale = Astro.currentLocale ?? 'en';
+const base = '/astro-cocktail-menu';
+const locales = ['en', 'ru', 'he'];
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 
-const languages = [
-  { code: 'en', label: 'EN' },
-  { code: 'he', label: 'עב' },
-  { code: 'ru', label: 'RU' },
-];
-
-const currentLocale = Astro.currentLocale ?? 'en';
 ---
 
-<html dir={direction} data-theme="neon">
+<html lang={locale} dir={direction} data-theme="golden-hour">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#030712" />
     <link rel="icon" href="/astro-cocktail-menu/favicon.ico" />
+    <Font cssVariable="--font-bona-nova" />
     <title>{frontmatter.title}</title>
+    <meta name="description" content={frontmatter.description ?? frontmatter.title} />
+    <link rel="canonical" href={canonicalUrl} />
+    {locales.map((lang) => (
+      <link rel="alternate" hreflang={lang} href={new URL(`${base}/${lang}/`, Astro.site)} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={new URL(`${base}/en/`, Astro.site)} />
     <ClientRouter />
+    <script is:inline>
+      document.addEventListener('astro:page-load', function() {
+        var links = document.querySelectorAll('.language-link');
+        var path = window.location.pathname;
+        links.forEach(function(link) {
+          var href = link.getAttribute('href');
+          if (!href) return;
+          var normalized = href.replace(/\/$/, '');
+          var isCurrent = path === href || path === normalized || path.startsWith(normalized + '/');
+          link.classList.toggle('active', isCurrent);
+        });
+      });
+    </script>
   </head>
   <body>
-    <nav class="language-switcher">
-      {languages.map((language) => (
-        <a
-          href={getRelativeLocaleUrl(language.code)}
-          class:list={['language-link', { active: language.code === currentLocale }]}
-        >
-          {language.label}
-        </a>
-      ))}
-    </nav>
-    <slot />
+    <SiteHeader />
+    <main id="main-content">
+      <slot />
+    </main>
   </body>
 </html>

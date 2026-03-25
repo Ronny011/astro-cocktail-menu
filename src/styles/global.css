@@ -1,19 +1,11 @@
-@import "tailwindcss";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-/* Common base styles */
 body {
   margin: 0;
   min-height: 100vh;
-  padding: 20px;
-  background-color: #030712;
-  color: #fae8ff;
-}
-
-h1 {
-  text-align: center;
-  padding: 30px 0;
-  color: #e879f9;
-  font-size: 32px;
-  font-weight: 900;
-  text-shadow: 0 0 10px rgba(217, 70, 239, 0.5);
+  -webkit-font-smoothing: antialiased;
 }

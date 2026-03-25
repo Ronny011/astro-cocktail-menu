@@ -1,0 +1,24 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const languages = [
+  { code: 'en', label: 'EN' },
+  { code: 'he', label: 'עב' },
+  { code: 'ru', label: 'RU' },
+];
+
+const currentLocale = Astro.currentLocale ?? 'en';
+---
+
+<header class="site-header">
+  <nav class="language-switcher" aria-label="Language switcher">
+    {languages.map((language) => (
+      <a
+        href={getRelativeLocaleUrl(language.code)}
+        class:list={['language-link', `lang-${language.code}`, { active: language.code === currentLocale }]}
+      >
+        {language.label}
+      </a>
+    ))}
+  </nav>
+</header>

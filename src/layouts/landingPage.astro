@@ -1,7 +1,9 @@
 ---
 import '../styles/global.css';
-import '../styles/landing.css';
+import '../styles/menu.css';
+import "../styles/rose-velvet-theme.css";
 import { ClientRouter } from 'astro:transitions';
+import { Font } from 'astro:assets';
 import type { Locales, LocaleProps } from '../pages/index.astro';
 
 type Props = {
@@ -11,23 +13,26 @@ type Props = {
 }
 
 const { title, buttonLabels, buttonUrls } = Astro.props;
+const locale = Astro.currentLocale ?? 'en';
 ---
-<html data-theme="neon">
+<html lang={locale}>
     <head>
-        <link rel="icon" href="/astro-cocktail-menu/favicon.ico" />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#030712" />
+        <link rel="icon" href="/astro-cocktail-menu/favicon.ico" />
+        <Font cssVariable="--font-bona-nova" />
         <title>{title}</title>
         <ClientRouter />
     </head>
     <body>
-        <div class="landing-content">
+        <main class="landing-content">
             <h1>{title}</h1>
-            <div class="landing-links">
+            <nav class="landing-links" aria-label="Language selection">
                 {Object.entries(buttonLabels).map(([key, value]) => (
-                    <a href={buttonUrls[key as Locales]} class="landing-link">{value}</a>
+                    <a href={buttonUrls[key as Locales]} class:list={['landing-link', `lang-${key}`]}>{value}</a>
                 ))}
-            </div>
-        </div>
+            </nav>
+        </main>
     </body>
 </html>
