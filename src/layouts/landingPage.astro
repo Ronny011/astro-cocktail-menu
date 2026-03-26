@@ -22,10 +22,11 @@ const locale = Astro.currentLocale ?? 'en';
         <meta name="theme-color" content="#030712" />
         <link rel="icon" href="/astro-cocktail-menu/favicon.ico" />
         <Font cssVariable="--font-bona-nova" />
+        <Font cssVariable="--font-niconne" />
         <title>{title}</title>
         <ClientRouter />
     </head>
-    <body>
+    <body class="landing-body">
         <main class="landing-content">
             <h1>{title}</h1>
             <nav class="landing-links" aria-label="Language selection">
